@@ -23,7 +23,7 @@ public class SecurityConfig {
 		http.csrf(csrf->csrf.disable())
 			.authorizeHttpRequests(
 					
-					request -> request.requestMatchers("/","/register").permitAll()// --Anyone can access these reuqets
+					request -> request.requestMatchers("/**","/register").permitAll()// --Anyone can access these reuqets
 					.anyRequest().authenticated()
 					
 					).httpBasic(Customizer.withDefaults());
